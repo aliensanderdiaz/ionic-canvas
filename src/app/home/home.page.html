@@ -8,7 +8,39 @@
 
 <ion-content>
   <div class="ion-padding">
-    The world is your oyster.
-    <p>If you get lost, the <a target="_blank" rel="noopener" href="https://ionicframework.com/docs/">docs</a> will be your guide.</p>
+    
+    <ion-grid>
+      <ion-row>
+        <ion-col>
+          <img src="{{ imageURL }}" alt="" srcset="">
+        </ion-col>
+        <ion-col>
+          <canvas #myCanvas width="100" height="100" style="border:1px solid #d3d3d3;" [hidden]="false"></canvas>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+          <ion-col>
+        <ion-button color="primary" expand="block" size="large" (click)="canvas()">CANVAS</ion-button>
+      </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col>
+            <img src="{{ imageLocal }}" alt="" srcset="">
+        </ion-col>
+        <ion-col>
+          ion-col
+        </ion-col>
+      </ion-row>
+
+      <ion-row>
+        <ion-col>
+            <ion-list>
+              <ion-item *ngFor="let mensaje of mensajes">
+                <ion-label text-wrap>{{ mensaje }}</ion-label>
+              </ion-item>
+            </ion-list>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
   </div>
 </ion-content>
